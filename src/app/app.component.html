@@ -1,0 +1,44 @@
+<router-outlet></router-outlet>
+<main>
+  <h1>Aprendendo Angular - Aulas de: Loiane Groner</h1>
+  <app-container title="Criação de Components">
+    <meu-primeiro-component />
+    <app-meu-segundo />
+  </app-container>
+
+  <app-container title="Data-Binding">
+    <app-data-binding />
+  </app-container>
+
+  <app-container title="Ciclo Vida Components">
+    <app-ciclo
+      [valorInicial]="valor"
+      (mostrarComponent)="onDestruirComponent($event)"
+      *ngIf="isMostrandoCiclo"
+    />
+    <button (click)="mudarValor()" *ngIf="isMostrandoCiclo">Mudar Valor</button>
+    <button (click)="mostrarCiclo()" *ngIf="!isMostrandoCiclo">
+      Mostrar componente
+    </button>
+  </app-container>
+
+  <app-container title="Diretiva ngIf">
+    <app-diretiva-ngif />
+  </app-container>
+
+  <app-container title="Diretiva ngSwitch & ngSwitchCase">
+    <app-diretiva-switch />
+  </app-container>
+
+  <app-container title="Diretiva ngFor">
+    <app-diretiva-ngfor />
+  </app-container>
+
+  <app-container title="Diretiva ngClass">
+    <app-diretiva-ngclass />
+  </app-container>
+
+  <app-container title="Diretiva ngStyle">
+    <app-diretiva-ngstyle />
+  </app-container>
+</main>

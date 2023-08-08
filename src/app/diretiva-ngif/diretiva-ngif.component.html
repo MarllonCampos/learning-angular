@@ -1,0 +1,14 @@
+<h4>*ngIf</h4>
+<div [hidden]="!(cursos.length > 0 && showCurso)">
+  <p>Lista de cursos</p>
+  <ul>
+    <li *ngFor="let curso of cursos">{{ curso }}</li>
+  </ul>
+</div>
+<div [hidden]="cursos.length == 0">
+  <p>Não há cursos para mostrar</p>
+</div>
+
+<button (click)="showCursos()">
+  {{ showCurso ? "Esconder" : "Mostrar" }} cursos
+</button>

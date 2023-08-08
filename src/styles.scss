@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+html,
+app-root {
+  min-height: 100%;
+}
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background-color: #16161d;
+  color: #fafafa;
+}
+
+a {
+  color: rgb(116, 125, 170);
+  transition: color 0.2s linear;
+}
+
+a:hover {
+  color: rgb(66, 75, 124);
+}
+
+details + details {
+  margin-top: 1rem;
+}

@@ -1,0 +1,13 @@
+.container {
+  border-top: 1px solid powderblue;
+  padding-top: 0.25rem;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content {
+    padding: 1rem;
+  }
+}

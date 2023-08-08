@@ -1,0 +1,12 @@
+<div class="container">
+  <header class="container__heading">
+    <h2>Aula: {{ title }}</h2>
+    <button (click)="showComponent()" class="toggleComponent">
+      {{ isComponentShowing ? "Esconder" : "Mostrar" }} Aula
+    </button>
+  </header>
+
+  <div class="container__content" *ngIf="isComponentShowing">
+    <ng-content />
+  </div>
+</div>

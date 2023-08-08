@@ -1,0 +1,16 @@
+<section class="input-property">
+  <p [class.hide]="hide">
+    PropExterna & PropInterna= nome
+    <span>{{ nome }}</span>
+  </p>
+
+  <p [class.hide]="hide">
+    PropInterna = nomeCurso PropExterna = nome2<br *ngIf="hide == true" />
+    <span> {{ nomeCurso }} </span>
+  </p>
+
+  <p [class.hide]="hide">
+    InlineInput = InlineInput<br *ngIf="hide == true" />
+    <span> {{ inlineInput }} </span>
+  </p>
+</section>

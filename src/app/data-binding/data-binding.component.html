@@ -1,0 +1,124 @@
+<section class="property-binding">
+  <details>
+    <summary>Interpolation / Interpolação</summary>
+
+    <p>
+      String renderizada com interpolation/interpolação:
+      <a href="{{ url }}">{{ url }}</a>
+    </p>
+    <p>
+      Operações matemáticas com interpolação:<br />
+      <span>O resultado de 1 + 1 é: {{ 1 + 1 }} </span>
+    </p>
+    <p>
+      Operações matemáticas com interpolações e chamada de funções: <br />
+      <span>O resultado de 1 + 1 + 1 é: {{ 1 + 1 + getValor() }} </span>
+    </p>
+    <p>
+      Operações lógicas dentro de interpolações:<br />
+      <span>
+        Estou gostando do curso de angular?
+        <strong>{{ cursoAngular && getCurtirCurso() }}</strong>
+      </span>
+    </p>
+  </details>
+
+  <details>
+    <summary>Property Binding</summary>
+    <img src="{{ urlImagem }}" />
+    <img [src]="urlImagem" />
+  </details>
+
+  <details>
+    <summary>Class & Style DataBinding</summary>
+    <div>
+      <p>Selecione uma classe:</p>
+      <select #alertClass (change)="(0)">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br /><br />
+      <div class="alert {{ alertClass.value }}">
+        Texto colorido conforme o valor do select.
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-success]="alertClass.value == 'alert-success'"
+      >
+        Sucesso
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-info]="alertClass.value == 'alert-info'"
+      >
+        Info
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-warning]="alertClass.value == 'alert-warning'"
+      >
+        Aviso
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-danger]="alertClass.value == 'alert-danger'"
+      >
+        Erro
+      </div>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        [style.display]="alertClass.value == 'alert-danger' ? 'block' : 'none'"
+      >
+        Esse texto somente aparece em caso de erro
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Event Binding</summary>
+    <div>
+      <button class="btn-btn-primary" (click)="buttonClick()">Me Clique</button>
+      <br /><br />
+      <input
+        type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput
+      />
+
+      <p>Valor Atual: {{ valorAtual }}</p>
+      <p>Valor Salvo: {{ valorSalvo }}</p>
+
+      <span
+        (mouseover)="onMouseOuverOut()"
+        (mouseout)="onMouseOuverOut()"
+        [class.highlight]="isMouseOver"
+        >Passe o mouse sobre mim</span
+      >
+      <br />
+      <span>{{ isMouseOver }} </span>
+    </div>
+  </details>
+
+  <app-my-form />
+
+  <details>
+    <summary>Input/Output Properties</summary>
+    <app-curso
+      [nome]="nomeDoCurso"
+      [nome2]="nomeDoCurso2"
+      [inlineInput]="inlineInput"
+      [hide]="false"
+    />
+
+    <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)" />
+  </details>
+</section>

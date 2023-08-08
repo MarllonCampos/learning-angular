@@ -1,0 +1,19 @@
+import { CursosService } from './../cursos/cursos.service';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-diretiva-ngfor',
+  templateUrl: './diretiva-ngfor.component.html',
+  styleUrls: ['./diretiva-ngfor.component.scss'],
+})
+export class DiretivaNgforComponent implements OnInit {
+  cursos?: string[];
+  service: CursosService;
+  constructor(private cursosService: CursosService) {
+    this.service = cursosService;
+  }
+
+  ngOnInit() {
+    this.cursos = this.cursosService.getCursos();
+  }
+}
